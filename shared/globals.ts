@@ -4,7 +4,7 @@ export const globalStyles = css`
   :root {
     --page--background: rgb(240, 240, 240);
     --page-text: rgb(40, 40, 40);
-    --backgrond-accent: rgb(3, 84, 133);
+    --background-accent: rgb(3, 84, 133);
     --color-text-invert: rgb(240, 240, 240);
   }
 
