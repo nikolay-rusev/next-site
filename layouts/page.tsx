@@ -1,3 +1,4 @@
+import { metadata as siteMeta } from 'config';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 
@@ -20,6 +21,12 @@ export default function Page({ meta, children }: PageProps) {
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:site" content={siteMeta.author.twitter} />
+        <meta property="twitter:title" content={meta.title} />
+        <meta property="twitter:description" content={meta.description} />
       </Head>
       <main>
         <Header />
