@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { GiAstronautHelmet as Astrounaut } from 'react-icons/gi';
 
-import { navigationStyles } from './styles';
+import { leakedList } from '@shared/style-helpers';
 
 const Navigation = () => (
-  <nav css={navigationStyles}>
+  <nav css={leakedList}>
     <Link href="/">
       <a aria-label="Back to home">
         <Astrounaut />

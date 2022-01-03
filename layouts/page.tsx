@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import Footer from '@components/footer';
 import { Header } from '@components/header';
 import Navigation from '@components/navigation';
 import SEO, { SEOProps } from '@components/seo';
@@ -17,6 +18,7 @@ export default function Page({ meta, children }: PageProps) {
         <Header />
         <Navigation />
         {children}
+        <Footer />
       </main>
     </>
   );
