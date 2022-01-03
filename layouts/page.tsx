@@ -1,9 +1,14 @@
 import Head from 'next/head';
+import { ReactNode } from 'react';
 
 import { Header } from '@components/header';
 import Navigation from '@components/navigation';
 
-export default function Page() {
+type PageProps = {
+  children?: ReactNode;
+};
+
+export default function Page({ children }: PageProps) {
   return (
     <>
       <Head>
@@ -12,6 +17,7 @@ export default function Page() {
       <main>
         <Header />
         <Navigation />
+        {children}
       </main>
     </>
   );
