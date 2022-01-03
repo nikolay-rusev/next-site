@@ -57,7 +57,12 @@ const footer = css`
 `;
 
 const About = () => (
-  <Page>
+  <Page
+    meta={{
+      title: 'About :: Devlog',
+      description: "Peter Quill's biography",
+    }}
+  >
     <section css={header}>
       <Image
         css={pilotPicture}
