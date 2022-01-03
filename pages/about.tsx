@@ -59,7 +59,7 @@ const footer = css`
 const About = () => (
   <Page
     meta={{
-      title: 'About :: Devlog',
+      title: 'About',
       description: "Peter Quill's biography",
     }}
   >
@@ -72,8 +72,7 @@ const About = () => (
         alt=""
       />
       <h2 css={title}>
-        <span>Star Lord</span>
-        <ReactIcon css={reactIconStyles} />
+        <span>Star Lord</span> <ReactIcon css={reactIconStyles} />
       </h2>
     </section>
     <section css={bio}>
