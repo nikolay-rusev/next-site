@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
 import Page from '@layouts/page';
 import { getPosts } from '@shared/get-posts';
@@ -10,7 +11,11 @@ export default function Home({
     <Page>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>{post.slug}</li>
+          <li key={post.slug}>
+            <Link href={`/${post.slug}`}>
+              <a>{post.frontMatter.title}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </Page>

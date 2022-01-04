@@ -1,11 +1,24 @@
 import { promises as fs, readdirSync } from 'fs';
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
+import renderToString from 'next-mdx-remote/render-to-string';
 import path from 'path';
 
 type PostFile = {
   filepath: string;
   slug: string;
+};
+
+type FrontMatter = {
+  date: string;
+  title: string;
+};
+
+export type FormattedPost = {
+  filepath: string;
+  slug: string;
+  content: string;
+  frontMatter: FrontMatter;
+  mdx: object;
 };
 
 const getDirData = (source: string): PostFile[] =>
@@ -19,7 +32,9 @@ const formatPostList = async ({ filepath, slug }: PostFile) => {
 
   const { content, data: frontMatter } = matter(mdxSource);
 
-  const mdx = await serialize(content, { scope: frontMatter });
+  const mdx = await renderToString(content, {
+    scope: frontMatter,
+  });
 
   return { filepath, slug, content, frontMatter, mdx };
 };
